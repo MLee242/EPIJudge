@@ -8,28 +8,8 @@ import java.util.List;
 public class SearchEntryEqualToIndex {
 
   public static int searchEntryEqualToItsIndex(List<Integer> A) {
-
-    //sorted array and distinct
-    //if at ith index, A[i] is less than i, then all the j < i will not be at the right index? once you hit the right index, next element has to equal
-    //or greater than the index i + 1 ...
-
-
-    int lo = 0, hi = A.size() - 1;
-
-    while(lo <= hi){
-
-      int mid = lo + (hi - lo) / 2;
-      if(A.get(mid) < mid){
-        lo = mid + 1;
-      }else if(A.get(mid) == mid){
-        return mid;
-      }else{
-        hi = mid - 1;
-      }
-    }
-
-
-    return -1;
+    // TODO - you fill in here.
+    return 0;
   }
   @EpiTest(testDataFile = "search_entry_equal_to_index.tsv")
   public static void searchEntryEqualToItsIndexWrapper(TimedExecutor executor,
