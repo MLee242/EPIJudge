@@ -6,8 +6,38 @@ public class ListCyclicRightShift {
 
   public static ListNode<Integer> cyclicallyRightShiftList(ListNode<Integer> L,
                                                            int k) {
-    // TODO - you fill in here.
-    return null;
+    if(L == null) return null;
+    ListNode<Integer> curr = L;
+    int len = 0;
+    while(curr != null){
+      len++;
+      curr = curr.next;
+    }
+
+    k = k % len;
+
+    if(k == 0) return L;
+
+    curr = L;
+
+    for(int i = 1; i <= k ; i++){
+      curr = curr.next;
+    }
+
+    ListNode<Integer> tail = L;
+
+    while(curr.next != null){
+      tail = tail.next;
+      curr = curr.next;
+    }
+
+    ListNode<Integer> newHead = tail.next;
+    tail.next = null;
+    curr.next = L;
+    return newHead;
+
+
+
   }
 
   public static void main(String[] args) {
