@@ -7,8 +7,33 @@ public class EvenOddListMerge {
   @EpiTest(testDataFile = "even_odd_list_merge.tsv")
 
   public static ListNode<Integer> evenOddMerge(ListNode<Integer> L) {
-    // TODO - you fill in here.
-    return null;
+    if(L == null) return null;
+    ListNode<Integer> evenHead = new ListNode<>(0, null);
+    ListNode<Integer> evenTail = evenHead;
+
+    ListNode<Integer> oddHead = new ListNode<>(0, null);
+    ListNode<Integer> oddTail = oddHead;
+
+    ListNode<Integer> curr = L;
+
+    boolean even = true;
+    while(curr != null){
+      if(even){
+        evenTail.next = curr;
+        evenTail = evenTail.next;
+      }else{
+        oddTail.next = curr;
+        oddTail = oddTail.next;
+      }
+      even = !even;
+      curr = curr.next;
+    }
+
+    evenTail.next = oddHead.next;
+    oddTail.next = null;
+
+    return evenHead.next;
+
   }
 
   public static void main(String[] args) {

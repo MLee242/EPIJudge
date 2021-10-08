@@ -3,11 +3,34 @@ import epi.test_framework.EpiTest;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 import epi.test_framework.TimedExecutor;
+
+import java.util.List;
+
 public class IsListCyclic {
 
   public static ListNode<Integer> hasCycle(ListNode<Integer> head) {
-    // TODO - you fill in here.
-    return null;
+    if(head == null || head.next == null) return null;
+
+    ListNode<Integer> slow = head;
+    ListNode<Integer> fast = head;
+
+    while(fast != null && fast.next != null){
+      fast = fast.next.next;
+      slow = slow.next;
+      if(fast == slow) break;
+    }
+
+    if(fast != slow) return null;
+
+    slow = head;
+    while(slow != fast){
+      slow = slow.next;
+      fast = fast.next;
+    }
+
+    return slow;
+
+
   }
   @EpiTest(testDataFile = "is_list_cyclic.tsv")
   public static void HasCycleWrapper(TimedExecutor executor,

@@ -8,9 +8,34 @@ import java.util.List;
 public class TreeFromPreorderWithNull {
   public static BinaryTreeNode<Integer>
   reconstructPreorder(List<Integer> preorder) {
-    // TODO - you fill in here.
-    return null;
+    index = 0;
+    return buildTree(preorder);
   }
+
+  static int index = 0;
+
+  private static BinaryTreeNode<Integer> buildTree(List<Integer> preorder){
+
+    if(index == preorder.size()) return null;
+
+
+    if(preorder.get(index) == null){
+      index++;
+      return null;
+    }else{
+      BinaryTreeNode<Integer> root = new BinaryTreeNode<>(preorder.get(index));
+      index++;
+      root.left = buildTree(preorder);
+      root.right = buildTree(preorder);
+      return root;
+    }
+
+  }
+
+
+
+
+
   @EpiTest(testDataFile = "tree_from_preorder_with_null.tsv")
   public static BinaryTreeNode<Integer>
   reconstructPreorderWrapper(TimedExecutor executor, List<String> strings)
