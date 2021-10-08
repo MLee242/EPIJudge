@@ -15,8 +15,8 @@ public class UniformRandomNumber {
   }
 
   public static int uniformRandom(int lowerBound, int upperBound) {
-    Random gen = new Random();
-    return gen.nextInt(upperBound - lowerBound + 1) + lowerBound;
+    // TODO - you fill in here.
+    return 0;
   }
   private static boolean uniformRandomRunner(TimedExecutor executor,
                                              int lowerBound, int upperBound)

@@ -6,32 +6,8 @@ public class SortedListsMerge {
   //@include
   public static ListNode<Integer> mergeTwoSortedLists(ListNode<Integer> L1,
                                                       ListNode<Integer> L2) {
-    if(L1 == null && L2 == null) return null;
-
-    if(L1 == null) return L2;
-
-    ListNode<Integer> dummyNode = new ListNode<>(0, null);
-    ListNode<Integer> tail = dummyNode;
-
-    while(L1 != null || L2 != null){ // O(M + N)
-      if(L2 == null){
-        tail.next = new ListNode<>(L1.data, null);
-        L1 = L1.next;
-      }else if(L1 == null){
-        tail.next = new ListNode<>(L2.data, null);
-        L2 = L2.next;
-      }else{
-        if(L1.data <= L2.data){
-          tail.next = new ListNode<>(L1.data, null);
-          L1 = L1.next;
-        }else{
-          tail.next = new ListNode<>(L2.data, null);
-          L2 = L2.next;
-        }
-      }
-      tail = tail.next;
-    }
-    return dummyNode.next;
+    // TODO - you fill in here.
+    return null;
   }
 
   public static void main(String[] args) {

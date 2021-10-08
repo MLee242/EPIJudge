@@ -4,8 +4,6 @@ import epi.test_framework.GenericTest;
 import epi.test_framework.TimedExecutor;
 
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 public class TreeRightSibling {
   public static class BinaryTreeNode<T> extends TreeLike<T, BinaryTreeNode<T>> {
@@ -32,22 +30,8 @@ public class TreeRightSibling {
   }
 
   public static void constructRightSibling(BinaryTreeNode<Integer> tree) {
-
-    if(tree == null) return;
-    Deque<BinaryTreeNode<Integer>> dq = new LinkedList<>();
-    dq.add(tree);
-
-    while(!dq.isEmpty()){
-      int k = dq.size();
-      while(k -- > 0){
-        BinaryTreeNode<Integer> curr = dq.poll();
-        if(k > 0){
-          curr.next = dq.peek();
-        }
-        if(curr.left != null) dq.add(curr.left);
-        if(curr.right != null) dq.add(curr.right);
-      }
-    }
+    // TODO - you fill in here.
+    return;
   }
   private static BinaryTreeNode<Integer>
   cloneTree(BinaryTree<Integer> original) {

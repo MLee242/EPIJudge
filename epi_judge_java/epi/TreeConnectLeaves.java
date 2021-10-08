@@ -6,29 +6,14 @@ import epi.test_framework.TimedExecutor;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 public class TreeConnectLeaves {
 
   public static List<BinaryTreeNode<Integer>>
   createListOfLeaves(BinaryTreeNode<Integer> tree) {
-    list = new LinkedList<>();
-    dfs(tree);
-    return list;
+    // TODO - you fill in here.
+    return Collections.emptyList();
   }
-
-  private static void dfs(BinaryTreeNode<Integer> tree){
-    if(tree == null) return;
-    if(tree.left == null && tree.right == null){
-      list.add(tree);
-      return;
-    }
-    dfs(tree.left);
-    dfs(tree.right);
-  }
-
-  private static List<BinaryTreeNode<Integer>> list;
-
   @EpiTest(testDataFile = "tree_connect_leaves.tsv")
   public static List<Integer>
   createListOfLeavesWrapper(TimedExecutor executor,

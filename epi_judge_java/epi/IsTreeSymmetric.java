@@ -5,13 +5,8 @@ public class IsTreeSymmetric {
   @EpiTest(testDataFile = "is_tree_symmetric.tsv")
 
   public static boolean isSymmetric(BinaryTreeNode<Integer> tree) {
-    if(tree == null) return true;
-    return isSymmetric(tree.left, tree.right);
-  }
-  private static boolean isSymmetric(BinaryTreeNode<Integer> tree1, BinaryTreeNode<Integer> tree2){
-
+    // TODO - you fill in here.
     return true;
-
   }
 
   public static void main(String[] args) {

@@ -4,37 +4,26 @@ import epi.test_framework.EpiUserType;
 import epi.test_framework.GenericTest;
 import epi.test_framework.TestFailure;
 
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
 public class StackWithMax {
 
-
   public static class Stack {
-
-    int max = Integer.MIN_VALUE;
-    Deque<Integer> s = new LinkedList<>();
     public boolean empty() {
-      return s.isEmpty();
+      // TODO - you fill in here.
+      return true;
     }
     public Integer max() {
-      return max;
+      // TODO - you fill in here.
+      return 0;
     }
     public Integer pop() {
-      int v = s.pop();
-      if(v == max){
-        max = s.pop();
-      }
-      return v;
+      // TODO - you fill in here.
+      return 0;
     }
     public void push(Integer x) {
-
-      if(x >= max){
-        s.push(max);
-        max = x;
-      }
-      s.push(x);
+      // TODO - you fill in here.
+      return;
     }
   }
   @EpiUserType(ctorParams = {String.class, int.class})
